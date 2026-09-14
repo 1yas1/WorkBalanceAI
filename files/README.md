@@ -1,4 +1,4 @@
-# 🧭 WorkBalance 85
+# 🧭 WorkBalance AI
 ### AI insights into work stress and work-addiction patterns across 85 cultures
 
 A data science project on a 31,352-respondent, 85-culture survey measuring work-addiction
@@ -21,10 +21,10 @@ C:\Users\yassin\Desktop\Bootcamp\Final Project\Data\Codebook.csv
 Set up the environment once:
 
 ```bash
-conda create -n workbalance85 python=3.13
-conda activate workbalance85
+conda create -n myenv13 python=3.13
+conda activate myenv13
 pip install -r requirements.txt
-python -m ipykernel install --user --name workbalance85 --display-name "Python 3.13 (workbalance85)"
+python -m ipykernel install --user --name myenv13 --display-name "Python 3.13 (myenv13)"
 ```
 
 (Or use `conda env create -f environment.yml` instead of the three commands above.)
@@ -32,7 +32,7 @@ python -m ipykernel install --user --name workbalance85 --display-name "Python 3
 ## What's inside
 
 ```
-WorkBalance85_Analysis.ipynb   ← full analysis notebook (EDA, PCA, K-Means, models, SHAP)
+WorkBalanceAI_Analysis.ipynb   ← full analysis notebook (EDA, PCA, K-Means, models, SHAP)
 app.py                         ← Streamlit app (3 pages + about)
 requirements.txt
 environment.yml                ← optional one-shot conda environment file
@@ -62,12 +62,12 @@ app_data/                      ← employees_sample.csv, country_summary.csv use
    `C:\Users\yassin\Desktop\Bootcamp\Final Project\Data\` (create the `Data` folder if it
    doesn't exist yet). If you keep your files somewhere else, just edit the `PROJECT_ROOT`
    line in the notebook's **Setup** cell.
-2. Activate the `workbalance85` conda environment (see above) and launch Jupyter:
+2. Activate the `myenv13` conda environment (see above) and launch Jupyter:
    ```bash
-   conda activate workbalance85
+   conda activate myenv13
    jupyter notebook
    ```
-3. Open `WorkBalance85_Analysis.ipynb`, select the **Python 3.13 (workbalance85)** kernel,
+3. Open `myenv13_Analysis.ipynb`, select the **Python 3.13 (myenv13)** kernel,
    and run all cells top to bottom. It will (re)generate everything in `models/` and
    `app_data/` next to the notebook.
 
@@ -77,7 +77,7 @@ The app already ships with pre-trained artifacts in `models/` and `app_data/`, s
 run it immediately without re-running the notebook:
 
 ```bash
-conda activate workbalance85
+conda activate myenv13
 streamlit run app.py
 ```
 
@@ -91,23 +91,3 @@ Then open the URL Streamlit prints (usually `http://localhost:8501`).
   you've used the Predictor, your own point shows up as a ⭐.
 - **ℹ️ About** — methodology summary and honest limitations.
 
-## Honest framing (please keep this if you present this project)
-
-- This is **not** a clinical burnout or addiction diagnosis. The IWAS items measure
-  self-reported work-related behaviors and cognitions over the last year, not a medical
-  assessment.
-- Cross-country comparisons are **descriptive**. Sample sizes range from ~100 to ~1,500
-  respondents per country — small samples are flagged in the app.
-- The data is cross-sectional self-report data — no causal claims are supported.
-
-## Suggested presentation structure
-
-1. Motivation — why "predict burnout" is the wrong framing for this dataset, and what
-   we did instead.
-2. EDA — item correlations, response distributions.
-3. Unsupervised: PCA + K-Means, how *k* was chosen, cluster naming logic.
-4. Supervised: model comparison table (Logistic Regression / Random Forest / Neural
-   Network), confusion matrix.
-5. Explainability: SHAP summary plot.
-6. Live demo of the Streamlit app.
-7. Limitations, honestly stated.
