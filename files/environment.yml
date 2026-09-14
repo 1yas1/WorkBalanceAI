@@ -1,4 +1,4 @@
-name: workbalance85
+name: workbalanceAI
 channels:
   - conda-forge
 dependencies:
