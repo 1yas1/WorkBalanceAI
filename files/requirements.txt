@@ -1,0 +1,16 @@
+# Minimum versions here are the first release of each package that ships a
+# Python 3.13 wheel. Newer versions within the same major line are fine.
+numpy>=2.1.0
+pandas>=2.2.3
+scikit-learn>=1.5.2
+matplotlib>=3.9.2
+seaborn>=0.13.2
+plotly>=5.24.0
+shap>=0.46.0
+joblib>=1.4.2
+streamlit>=1.38.0
+nbformat>=5.10.4
+
+# Needed to run the notebook locally in Jupyter Notebook via Miniconda
+jupyter>=1.0.0
+ipykernel>=6.29.5
